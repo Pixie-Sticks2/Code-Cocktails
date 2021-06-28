@@ -7,3 +7,9 @@
 - As a resort manager, I want to find new creative summer drinks for our visiting tourists.
 - As a non-drinker, I want to be able to enjoy the night with my drinking friends. 
 - As a bored Internet user, I want to be mildly entertained by a simple game.
+
+## Languages/Technologies Used
+- JavaScript
+- HTML
+- CSS
+- Photoshop
