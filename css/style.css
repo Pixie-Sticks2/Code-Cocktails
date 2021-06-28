@@ -7,14 +7,15 @@ p {
 }
 
 header {
-  background-image: url('img_girl.jpg');
   padding-left: 3%;
   padding-top: 2%;
+  height: 130px;
 }
 
 header img {
   width: 500px;
 }
+
 
 body {
   background-color: #eae1df;
@@ -24,4 +25,91 @@ body {
   position: relative;
   top: 50%;
   left: 25%;
+}
+
+nav {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+nav ul {
+  color: white;
+  display: flex;
+  list-style: none;
+  background-color: #d37322;
+  font-family: 'Cabin', sans-serif;
+  letter-spacing: 2px;
+  font-size: 1em;
+  padding: 0px;
+  text-align: center;
+  margin: 0px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  width: 300px;
+  font-weight: 550;
+  padding: 10px 0px;
+}
+
+nav a:hover {
+  color: rgb(24, 24, 24);
+  text-decoration: none;
+  background-color: white;
+  width: 300px;
+  font-weight: 550;
+  transform: scale(1.25);
+  border-radius: 15px;;
+}
+
+#aboutmain {
+  display: flex;
+  flex-direction: column;
+  text-justify: center;
+  text-align: center;
+}
+
+#aboutmain h1 {
+  font-size: 3.5em;
+  font-family: 'Overpass', sans-serif;
+  margin-top: 50px;
+}
+
+#aboutus {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#aboutus div {
+  display: block;
+  width: 20%;
+  background-color: white;
+  text-justify: center;
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+.profile {
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.profile:hover {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+#aboutus h3 {
+  font-size: 1.3em;
+  font-family: 'Overpass', sans-serif;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+#aboutus h3:hover {
+  transform: scale(1.2);
 }
