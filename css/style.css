@@ -1,0 +1,27 @@
+h1 {
+  font-family: 'Overpass', sans-serif;
+}
+
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+header {
+  background-image: url('img_girl.jpg');
+  padding-left: 3%;
+  padding-top: 2%;
+}
+
+header img {
+  width: 500px;
+}
+
+body {
+  background-color: #eae1df;
+}
+
+#bartender {
+  position: relative;
+  top: 50%;
+  left: 25%;
+}
