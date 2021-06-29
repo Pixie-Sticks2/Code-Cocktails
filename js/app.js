@@ -4,6 +4,7 @@
 const liquorFormElem = document.getElementById('liquorForm');
 Drink.prototype.allDrinksArray = [];
 let currentDrink = '';
+let drink;
 
 // Constructor Functions
 
@@ -38,6 +39,14 @@ function handleSubmit(event) {
   // render recipe card
 
 }
+
+//user selects Randomize Drink option
+function randomDrink () {
+  let randomNum = Math.floor(Math.random() * Drink.prototype.allDrinksArray.length) + 1;
+  console.log(randomNum);
+  drink = Drink.prototype.allDrinksArray[randomNum];
+}
+
 
 // Event Listener
 liquorFormElem.addEventListener('submit', handleSubmit);
@@ -122,7 +131,8 @@ function createDrinks() {
 
 
 createDrinks();
-
+randomDrink();
+console.log(drink);
 
 // Jesse
 //----------------Prototype Method---------------------//
