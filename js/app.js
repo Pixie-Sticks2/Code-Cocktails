@@ -42,11 +42,6 @@ function handleSubmit(event) {
 // Event Listener
 liquorFormElem.addEventListener('submit', handleSubmit);
 
-
-new Drink('White Russian', 'Vodka', 'Summer', 'Wedding');
-new Drink('test', 'Whiskey', 'Winter', 'Holiday');
-
-
 //Robert
 
 function createDrinks() {
@@ -106,11 +101,11 @@ function createDrinks() {
   
   new Drink("Method Margarita Mocktail", "The fun is built-in to this tart splash of summer!", "Non-Alcoholic Mixer", ["Limeade", "Simple Syrup", "Club Soda", "Coarse Salt"], "Summer", "Night Out", "../images/method.png", "Mix well, sip, and enjoy.", "Author - Jessica P.");
   
+  new Drink('Fall in Love', 'This sweet champagne fulfills the feeling of meeting the one of your autumn dreams.', 'Non-Alcoholic Mixer', ["Apple Cider", "Ginger Beer", "Honey"], 'Autumn', 'Wedding', 'Image', "With the love in the air and leaves everywhere, meet the one to become a pair!", "Author - Anvay B");
+  
+  new Drink('Poison Appletini', "You won't know how this tastes until you take a sip, but by then it's already too late...", 'Non-Alcoholic Mixer', ["Apple Juice", "Lime Drops", "Cayenne Cinnamon"], 'Autumn', 'Holiday', 'Image', "Pick your poison and pound that potion! Add green color for the aesthetic.", "Author - Anvay B");
+  
   new Drink("Smoking Sea SS", "Get spooky with this deep-sea inspired Halloween mocktail.", "Non-Alcoholic Mixer", ["Cranberry Juice", "Apple Cider", "Dry Ice"], "Autumn", "Night Out", "../images/smoking.png", "Shake, stir, and dive in!", "Author - Jessica P.");
-  
-  new Drink('Fall in Love', 'This sweet champagne fulfills the feeling of meeting the one of your autumn dreams.', ["Apple Cider", "Ginger Beer", "Honey"], 'Non-Alcoholic Mixer', 'Autumn', 'Wedding', 'Image', "With the love in the air and leaves everywhere, meet the one to become a pair!", "Author - Anvay B");
-  
-  new Drink('Poison Appletini', "You won't know how this tastes until you take a sip, but by then it's already too late...", ["Apple Juice", "Lime Drops", "Cayenne Cinnamon"], 'Non-Alcoholic Mixer', 'Autumn', 'Holiday', 'Image', "Pick your poison and pound that potion! Add green color for the aesthetic.", "Author - Anvay B");
     
   new Drink('Mistletoe Mimosa', 'Make this holiday all holly-jolly with this Christmas cocktail!', ["Barley Tea", "Maple Syrup", "Mistletoe Magic"], 'Non-Alcoholic Mixer', 'Winter', 'Holiday', 'Image', "Mix the strong tea with syrup and find someone for that final ingredient ;) ", "Author, - Anvay B");
 
