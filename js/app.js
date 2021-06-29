@@ -87,20 +87,10 @@ function createDrinks() {
   new Drink('Name', 'Description', 'Recipe', 'Non-Alcoholic Mixer', 'Winter', 'Night-Out', 'Image', 'Bartender');
 }
 
+createDrinks();
+
 
 // Jesse
-//--------------------Global Variables--------------------//
-RecipeCard.potentialRecipes = [];
-//-------------------Constructor Function------------------//
-function RecipeCard(title, description, ingredients, drinkpic, directions, author) {
-  this.title = title;
-  this.description = description;
-  this.ingredients = ingredients;
-  this.drinkpic = drinkpic;
-  this.directions = directions;
-  this.author = author;
-  RecipeCard.potentialRecipes.push(this);
-}
 //----------------Prototype Method---------------------//
 RecipeCard.prototype.renderRecipeCard = function(titlePosition, descriptionPosition, ingredientsPosition, drinkpicPosition, directionsPosition, authorPosition) {
   titlePosition.textContent = this.title;
@@ -110,8 +100,20 @@ RecipeCard.prototype.renderRecipeCard = function(titlePosition, descriptionPosit
   directionsPosition.textContent = this.ingredients;
   authorPosition.textContent = this.author;
 }
-new Recipe("Alabama Booty Shaker", "This delicious concoction is guaranteed to get the wedding on the dance floor!", "Tequila, Lowered expectations, Lively music", "../images/Tiki Drink.png", "Shake it, stir it, and pour it down your gullet!", "Author - Jesse D");
-new Recipe("Aretha Franklin", "Nothing like a big woman to keep you warm at a winter wonderland wedding!", "Tequila, Can-do attitude, A whole lot of love", "../images/Layered Color Drink.png", "Squeeze it, strain it, and hold on for dear life!", "Author - Jesse D");
-new Recipe("Backcountry Sour Smash", "This potent drink is a not-so-subtle blend of pine, body odor, and granola", "Vodka, Exhaustion, Unfiltered Water", "../images/Lime Drink.png", "Shrug it off, dust it off, and serve it in your hiking boot!", "Author - Jesse D");
-
-createDrinks();
+function renderCard() {
+  const recipeCardArticle = document.createElement("id to bartender div?");
+  articleElem.appendChild(recipeCardArticle);
+  const recipeTitle = document.createElement("h2 title", this.title);
+  articleElem.appendChild(recipeTitle);
+  const recipeDescription = document.createElement("h3", this.description);
+  articleElem.appendChild(recipeDescription);
+  const recipeLiquor = document.createElement("p", this.liquorType);
+  articleElem.appendChild(recipeLiquor);
+}
+new Drink("Alabama Booty Shaker", "This delicious concoction is guaranteed to get the wedding on the dance floor!", "Tequila", [Lowered Expectations, Lively music], "Summer", "Wedding", "../images/Tiki Drink.png", "Shake it, stir it, and pour it down your gullet!", "Author - Jesse D");
+new Drink("Aretha Franklin", "Nothing like a big woman to keep you warm at a winter wonderland wedding!", "Tequila", "Can-do Attitude, A Whole Lot Of Love", "Autumnn", "Wedding", "../images/Layered Color Drink.png", "Squeeze it, strain it, and hold on for dear life!", "Author - Jesse D");
+new Drink("Backcountry Sour Smash", "This potent drink is a not-so-subtle blend of pine, body odor, and granola", "Vodka", "Exhaustion, Unfiltered Water", "Summer", "Holiday", "../images/Lime Drink.png", "Shrug it off, dust it off, and serve it in your hiking boot!", "Author - Jesse D");
+new Drink("Politically Incorrect", "Show your peers that you're the old white man that nobody wants to listen to anymore!", "Whiskey", "Intolerance, Blatant Disregard", "Autumn", "Holiday", "../images/examplePic.png", "Stonewall it, pass it in the middle of the night, and take it from a non-profit fund!");
+new Drink("No 'Regerts'", "This sneaky little cocktail might force you to delete your social media accounts!", "Vodka", "Poor Life Choices, Peer Pressure", "Autumn", "Night-Out", "../images/examplePic.png", "Carry on with reckless abandon, throw in a misspelled tattoo, and serve it on a stranger's bellybutton.");
+new Drink("Covid Shots", "This cocktail is 97% effective in inebriating the general population", "Tequila", "Extra Tequila, Social Distancing", "Winter", "Holiday", "../images/examplePic.png", "Serve in a needless syringe, and chase it with a second dose!", "Author - Jesse D");
+new Drink("Bomb Pop", "A modernized twist on the original red, white, and blue popsicle", "Non-Alcoholic Mixer", "Fruit Punch, Artificial Food Coloring", "Summer", "Holiday", "../images/examplePic.png", "Blend each colored punch with coloring and ice, then layer each colored slush mix into glass and serve!", "Author - Jesse D");
