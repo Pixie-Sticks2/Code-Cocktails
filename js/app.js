@@ -37,7 +37,31 @@ function handleSubmit(event) {
     }
   }
   // render recipe card
+  currentDrink.renderCard();
+}
 
+Drink.prototype.renderCard = function() {
+
+  let nameElem = document.getElementById("name");
+  let imageElem = document.getElementById("image");
+  let descriptionElem = document.getElementById("description");
+  let liquorTypeElem = document.getElementById("liquorRecipe");
+  let directionsElem = document.getElementById("directions");
+  let authorElem = document.getElementById("author");
+
+  nameElem.textContent = this.name;
+  console.log(this.name);
+  imageElem.src = this.image;
+  descriptionElem.textContent = this.description;
+  liquorTypeElem.textContent = this.liquorRecipe;
+  directionsElem.textContent = this.directions;
+  authorElem.textContent = this.bartender;
+
+  for (let i = 0; i < this.recipe.length; i++) {
+    let recipeElem = document.createElement("li");
+    recipeElem.textContent = this.recipe[i];
+    liquorTypeElem.appendChild(recipeElem);
+  }
 }
 
 //user selects Randomize Drink option
@@ -58,15 +82,16 @@ function createDrinks() {
   
   new Drink('Huckleberry Sin', 'Enjoy the sunset with this excoriating critique of slavery - but make sure to stay alert for riverbank beverage bandits!', 'Vodka', ['5 Fresh Blueberries', '2 oz Huckleberry Flavored Vodka', '12 oz Club Soda'], 'Summer', 'Wedding', 'Image', 'Muddle the blueberries in the bottom of a mason jar. Add ice and pour in the vodka, filling to the top with club soda.', 'Author - Robert Z');
   
-  new Drink("Backcountry Sour Smash", "This potent drink is a not-so-subtle blend of pine, body odor, and granola", "Vodka", ["Exhaustion", "Unfiltered Water"], "Summer", "Holiday", "../images/Lime Drink.png", "Shrug it off, dust it off, and serve it in your hiking boot!", "Author - Jesse D");
 
+  new Drink("Backcountry Sour Smash", "This potent drink is a not-so-subtle blend of pine, body odor, and granola", "Vodka", ["Vodka", "Exhaustion", "Unfiltered Water"], "Summer", "Holiday", "../images/Lime Drink.png", "Shrug it off, dust it off, and serve it in your hiking boot!", "Author - Jesse D");
+ 
   new Drink('Text-Overflow Rule', 'A Moscow Mule', 'Vodka', ['Vodka', 'Ginger Beer', 'Lime Juice'], 'Summer', 'Night-out', './images/Layered Color Drink.png', 'Pour vodka and ginger beer into a copper mug and a splash of lime juice.', 'Author - Matt C.')
-    
+  
   new Drink('Gulp-iver\'s Travels', 'A drink worth setting sail for. The Brobdingnagians would agree!', 'Vodka', ['1/2 oz Vodka', '1/2 oz Peach Schnapps', '1/2 oz Grapefruit Juice', '1/2 oz Cranberry Juice'], 'Autumn', 'Wedding', 'Image', 'Shake the ingredients with ice and strain into an empty rocks glass. This goes down in a single swig.', 'Author - Robert Z');
 
   new Drink("Drunken Spice Latte", "This Russian liquor takes an adult twist on every basic white girl's coffee of choice!", "Vodka", ["Tiny Pumpkins","Instagram Captions","Latte Foam Art"], "Autumn", "Holiday", "Image", "Listen to Bo Burnam's 'White Woman's Instagram' song and add whatever you want from that. Top it all off with vodka.", "Author - Anvay B");
-    
-  new Drink("No 'Regerts'", "This sneaky little cocktail might force you to delete your social media accounts!", "Vodka", ["Poor Life Choices", "Peer Pressure"], "Autumn", "Night-out", "../images/examplePic.png", "Carry on with reckless abandon, throw in a misspelled tattoo, and serve it on a stranger's bellybutton.", "Author - Jesse D");
+   
+  new Drink("No 'Regerts'", "This sneaky little cocktail might force you to delete your social media accounts!", "Vodka", ["Vodka", "Poor Life Choices", "Peer Pressure"], "Autumn", "Night-Out", "../images/examplePic.png", "Carry on with reckless abandon, throw in a misspelled tattoo, and serve it on a stranger's bellybutton.", "Author - Jesse D");
   
   new Drink("Reindeer RAM", "Boost memories of your big day with this elegant peppermint martini!", "Vodka", ["Vodka", "Candy Canes", "Marshmallow Creme"], "Winter", "Wedding", "../images/reindeer.png", "Crush peppermint, swirl, and serve.", "Author - Jessica P.");
   
@@ -78,15 +103,15 @@ function createDrinks() {
   
   new Drink('GuavaScript', 'If (let feeling === good) {getThisDrink();}', 'Tequila', ['Guava Nectar', 'Tequila', 'Lime', 'Mint'], 'Summer', "Night-out", './images/Lime Drink.png', 'Mix Lime Juice, Tequila, and Guava Nectar in 1:2:6 ratio. Garnish with mint and lime slice.', 'Author - Matt C.');
   
-  new Drink("Aretha Franklin", "Nothing like a big woman to keep you warm at a winter wonderland wedding!", "Tequila", ["Can-do Attitude", "A Whole Lot Of Love"], "Autumn", "Wedding", "../images/Layered Color Drink.png", "Squeeze it, strain it, and hold on for dear life!", "Author - Jesse D");
-  
+  new Drink("Aretha Franklin", "Nothing like a big woman to keep you warm at a winter wonderland wedding!", "Tequila", ["Tequila", "Can-do Attitude", "A Whole Lot Of Love"], "Autumnn", "Wedding", "../images/Layered Color Drink.png", "Squeeze it, strain it, and hold on for dear life!", "Author - Jesse D");
+
   new Drink('Drankenstein', 'Heads Up: More than a few couples have played their own version of doctor after downing two or three of these monsters.', 'Tequila', ['1 oz Melon Liqueur', '1 oz Tequila', '12 oz Club Soda'], 'Autumn', 'Holiday', 'Image', 'Pour the liqueur and tequila over ice in a highball glass, then fill to the top with club soda.', 'Author - Robert Z');
   
   new Drink("Python Paloma", "Enjoying this delicious treat is fun in any language!", "Tequila", ["Tequila", "Pink Grapefruit", "Lime Juice", "Coarse Salt"], "Autumn", "Night-out", "../images/python.png", "Press grapefruit, squeeze lime, and mix well.", "Author - Jessica P.");
   
   new Drink('Tequila and Invoke', 'Invoke this drink to render a good time.', 'Tequila', ['Tequila', 'Coke', 'Lime'], 'Winter', 'Wedding', './images/Lime Drink.png', 'Mix 1 part tequila and 2 parts coke and add a slice of lime.', 'Author - Matt C.');
   
-  new Drink("Covid Shots", "This cocktail is 97% effective in inebriating the general population", "Tequila", ["Extra Tequila", "Social Distancing"], "Winter", "Holiday", "../images/examplePic.png", "Serve in a needless syringe, and chase it with a second dose!", "Author - Jesse D");
+  new Drink("Covid Shots", "This cocktail is 97% effective in inebriating the general population", "Tequila", ["Tequila", "Extra Tequila", "Social Distancing"], "Winter", "Holiday", "../images/examplePic.png", "Serve in a needless syringe, and chase it with a second dose!", "Author - Jesse D");
   
   new Drink("Snowy Syntax Smash", "Baby, it's cold outside! Snuggle up with this smooth and crisp drink.", "Tequila", ["Tequila", "Pomegranate", "Honey", "Fresh Ginger"], "Winter", "Night-out", "Chill and serve cold for maximum snuggle-ability.", "../images/smash.png", "Author - Jessica P.");
 
@@ -100,7 +125,7 @@ function createDrinks() {
     
   new Drink("Chocolate Constructor", "Once you've made one, you've made them all!", "Whiskey", ["Whiskey", "Chocolate Bitters", "Orange"], "Autumn", "Wedding", "../images/chocolate.png", "Cozy up, pour up, and bottom's up!", "Author - Jessica P.");
   
-  new Drink("Politically Incorrect", "Show your peers that you're the old white man that nobody wants to listen to anymore", "Whiskey", ["Intolerance", "Blatant Disregard"], "Autumn", "Holiday", "../images/examplePic.png", "Stonewall it, pass it in the middle of the night, and take it from a non-profit fund!");
+  new Drink("Politically Incorrect", "Show your peers that you're the old white man that nobody wants to listen to anymore", "Whiskey", ["Whiskey", "Intolerance", "Blatant Disregard"], "Autumn", "Holiday", "../images/examplePic.png", "Stonewall it, pass it in the middle of the night, and take it from a non-profit fund!");
   
   new Drink('The S(ide)carlet Letter', 'So tasty you may just end up parading through town afterward. Have no shame: this baby\'s all yours!', 'Whiskey', ['Sugared Cocktail Rim', '1 oz Cherry Juice', '1/2 oz Brandy', '1/2 oz Triple Sec'], 'Autumn', 'Night-out', 'Image', 'Rim a chilled cocktail glass with sugar and place aside. Shake the ingredients with ice and strain into the glass.', 'Author - Robert Z');
   
@@ -110,7 +135,7 @@ function createDrinks() {
 
   new Drink('Frosé', 'Make any seaside getaway complete with this classic slushy!', 'Non-Alcoholic Mixer', ["replacement Rosé", "Raspberries", "Rest"], 'Summer', 'Wedding', 'Image', "Just go out and buy some pink lemonade and berries. After all, today is your rest day.", "Author - Anvay B");
 
-  new Drink("Bomb Pop", "A modernized twist on the original red, white, and blue popsicle", "Non-Alcoholic Mixer", ["Fruit Punch", "Artificial Food Coloring"], "Summer", "Holiday", "../images/examplePic.png", "Blend each colored punch with coloring and ice, then layer each colored slush mix into glass and serve!", "Author - Jesse D");
+  new Drink("Bomb Pop", "A modernized twist on the original red, white, and blue popsicle", "Non-Alcoholic Mixer", ["Non-Alcoholic Mixer", "Fruit Punch", "Artificial Food Coloring"], "Summer", "Holiday", "../images/examplePic.png", "Blend each colored punch with coloring and ice, then layer each colored slush mix into glass and serve!", "Author - Jesse D");
   
   new Drink("Method Margarita Mocktail", "The fun is built-in to this tart splash of summer!", "Non-Alcoholic Mixer", ["Limeade", "Simple Syrup", "Club Soda", "Coarse Salt"], "Summer", "Night-out", "../images/method.png", "Mix well, sip, and enjoy.", "Author - Jessica P.");
   
@@ -138,23 +163,23 @@ console.log(drink);
 
 // Jesse
 //----------------Prototype Method---------------------//
-RecipeCard.prototype.renderRecipeCard = function(namePosition, descriptionPosition, liquorTypePosition, recipePosition, imagePosition, directionsPosition, bartenderPosition) {
-  namePosition.textContent = this.name;
-  descriptionPosition.textContent = this.description;
-  liquorTypePosition.textContent = this.liquorType;
-  recipePosition.textContent = this.recipe;
-  imagePosition.src = this.image;
-  directionsPosition.textContent = this.ingredients;
-  bartenderPosition.textContent = this.bartender;
-}
-function renderCard() {
-  const recipeCardArticle = document.createElement("recipe_card",);
-  articleElem.appendChild(recipeCardArticle);
-  const recipeTitle = document.createElement("h2 title", this.name);
-  articleElem.appendChild(recipeTitle);
-  const recipeDescription = document.createElement("h3", this.description);
-  articleElem.appendChild(recipeDescription);
-  const recipeLiquor = document.createElement("p", this.liquorType);
-  articleElem.appendChild(recipeLiquor);
-}
+// RecipeCard.prototype.renderRecipeCard = function(namePosition, descriptionPosition, liquorTypePosition, recipePosition, imagePosition, directionsPosition, bartenderPosition) {
+//   namePosition.textContent = this.name;
+//   descriptionPosition.textContent = this.description;
+//   liquorTypePosition.textContent = this.liquorType;
+//   recipePosition.textContent = this.recipe;
+//   imagePosition.src = this.image;
+//   directionsPosition.textContent = this.ingredients;
+//   bartenderPosition.textContent = this.bartender;
+// }
+// function renderCard() {
+//   const recipeCardArticle = document.createElement("recipe_card",);
+//   articleElem.appendChild(recipeCardArticle);
+//   const recipeTitle = document.createElement("h2 title", this.name);
+//   articleElem.appendChild(recipeTitle);
+//   const recipeDescription = document.createElement("h3", this.description);
+//   articleElem.appendChild(recipeDescription);
+//   const recipeLiquor = document.createElement("p", this.liquorType);
+//   articleElem.appendChild(recipeLiquor);
+// }
 //--hello world--//
