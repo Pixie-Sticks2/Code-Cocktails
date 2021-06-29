@@ -93,13 +93,14 @@ createDrinks();
 
 // Jesse
 //----------------Prototype Method---------------------//
-RecipeCard.prototype.renderRecipeCard = function(titlePosition, descriptionPosition, ingredientsPosition, drinkpicPosition, directionsPosition, authorPosition) {
-  titlePosition.textContent = this.title;
+RecipeCard.prototype.renderRecipeCard = function(namePosition, descriptionPosition, liquorTypePosition, recipePosition, imagePosition, directionsPosition, bartenderPosition) {
+  namePosition.textContent = this.name;
   descriptionPosition.textContent = this.description;
-  ingredientsPosition.textContent = this.ingredients;
-  drinkpicPosition.src = this.drinkpic;
+  liquorTypePosition.textContent = this.liquorType;
+  recipePosition.textContent = this.recipe;
+  imagePosition.src = this.image;
   directionsPosition.textContent = this.ingredients;
-  authorPosition.textContent = this.author;
+  bartenderPosition.textContent = this.bartender;
 }
 function renderCard() {
   const recipeCardArticle = document.createElement("id to bartender div?");
