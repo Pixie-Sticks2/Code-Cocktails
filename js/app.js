@@ -50,6 +50,8 @@ function createDrinks() {
   new Drink('Huckleberry Sin', 'Enjoy the sunset with this excoriating critique of slavery - but make sure to stay alert for riverbank beverage bandits!', 'Vodka', ['5 Fresh Blueberries', '2 oz Huckleberry Flavored Vodka', '12 oz Club Soda'], 'Summer', 'Wedding', 'Image', 'Muddle the blueberries in the bottom of a mason jar. Add ice and pour in the vodka, filling to the top with club soda.', 'Author - Robert Z');
   
   new Drink("Backcountry Sour Smash", "This potent drink is a not-so-subtle blend of pine, body odor, and granola", "Vodka", ["Exhaustion", "Unfiltered Water"], "Summer", "Holiday", "../images/Lime Drink.png", "Shrug it off, dust it off, and serve it in your hiking boot!", "Author - Jesse D");
+
+  new Drink('Text-Overflow Rule', 'A Moscow Mule', 'Vodka', ['Vodka', 'Ginger Beer', 'Lime Juice'], 'Summer', 'Night-Out', './images/Layered Color Drink.png', 'Pour vodka and ginger beer into a copper mug and a splash of lime juice.', 'Author - Matt C.')
     
   new Drink('Gulp-iver\'s Travels', 'A drink worth setting sail for. The Brobdingnagians would agree!', 'Vodka', ['1/2 oz Vodka', '1/2 oz Peach Schnapps', '1/2 oz Grapefruit Juice', '1/2 oz Cranberry Juice'], 'Autumn', 'Wedding', 'Image', 'Shake the ingredients with ice and strain into an empty rocks glass. This goes down in a single swig.', 'Author - Robert Z');
 
