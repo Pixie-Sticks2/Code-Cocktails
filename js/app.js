@@ -102,7 +102,7 @@ RecipeCard.prototype.renderRecipeCard = function(namePosition, descriptionPositi
   bartenderPosition.textContent = this.bartender;
 }
 function renderCard() {
-  const recipeCardArticle = document.createElement("id to bartender div?");
+  const recipeCardArticle = document.createElement("recipe_card",);
   articleElem.appendChild(recipeCardArticle);
   const recipeTitle = document.createElement("h2 title", this.name);
   articleElem.appendChild(recipeTitle);
