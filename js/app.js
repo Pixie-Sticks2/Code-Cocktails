@@ -53,13 +53,13 @@ function createDrinks() {
     
   new Drink('Gulp-iver\'s Travels', 'A drink worth setting sail for. The Brobdingnagians would agree!', 'Vodka', ['1/2 oz Vodka', '1/2 oz Peach Schnapps', '1/2 oz Grapefruit Juice', '1/2 oz Cranberry Juice'], 'Autumn', 'Wedding', 'Image', 'Shake the ingredients with ice and strain into an empty rocks glass. This goes down in a single swig.', 'Author - Robert Z');
     
-  new Drink("No 'Regerts'", "This sneaky little cocktail might force you to delete your social media accounts!", "Vodka", ["Poor Life Choices", "Peer Pressure"], "Autumn", "Night-Out", "../images/examplePic.png", "Carry on with reckless abandon, throw in a misspelled tattoo, and serve it on a stranger's bellybutton.");
+  new Drink("No 'Regerts'", "This sneaky little cocktail might force you to delete your social media accounts!", "Vodka", ["Poor Life Choices", "Peer Pressure"], "Autumn", "Night-Out", "../images/examplePic.png", "Carry on with reckless abandon, throw in a misspelled tattoo, and serve it on a stranger's bellybutton.", "Author - Jesse D");
   
   new Drink("Reindeer RAM", "Boost memories of your big day with this elegant peppermint martini!", "Vodka", ["Vodka", "Candy Canes", "Marshmallow Creme"], "Winter", "Wedding", "../images/reindeer.png", "Crush peppermint, swirl, and serve.", "Author - Jessica P.");
   
   new Drink('The Pitcher of Dorian Grey Goose', '"Experience is merely the name men gave to their mistakes." ~Oscar Wilde  "Lemonade concentrate and vodka!? I\'ll try that mistake!" ~Robert Zimmerman', 'Vodka', ['10 Sprigs Fresh Mint', '12 oz Frozen Lemonade Concentrate', '16 oz Grey Goose Vodka', 'Cucumber, Sliced into Wheels'], 'Winter', 'Holiday', 'Image', 'Tear the mint and place in the pitcher. Add the lemonade concentrate and stir until thawed. Pour in the vodka and three cups of cold water and stir. Serve over ice and garnish with cucumber.', 'Author - Robert Z')
   
-  new Drink('HTML Button', 'A classic White Russian cocktail.', 'Vodka', ['Vodka', 'Coffee Liqueur', 'Cream or Milk'], 'Winter', 'Night-Out', './images/Layered Color Drink.png', 'Add 2 parts Vodka, 1 part coffee liqueur, and 1 part cream.', 'Author - Matt C.');  new Drink("Alabama Booty Shaker", "This delicious concoction is guaranteed to get the wedding on the dance floor!", "Tequila", ["Lowered Expectations", "Lively music"], "Summer", "Wedding", "../images/Tiki Drink.png", "Shake it, stir it, and pour it down your gullet!", "Author - Jesse D");
+  new Drink('HTML Button', 'A classic White Russian cocktail.', 'Vodka', ['Vodka', 'Coffee Liqueur', 'Cream or Milk'], 'Winter', 'Night-Out', './images/Layered Color Drink.png', 'Add 2 parts Vodka, 1 part coffee liqueur, and 1 part cream.', 'Author - Matt C.');
   
   new Drink('Tequila Mockingbird', '"Harper Lee is going to publish a sequel after 55 years!? And you people think I write slow. ~George R.R. Martin"', 'Tequila', ['1-1/2 oz Tequila', '2 Drops Alabama Hot Sauce', '1 Dill Pickle'], 'Summer', 'Holiday', 'Image', 'Pour the tequila into a shot glass, add the hot sauce, and slam that bad boy back before chasing with a big chomp of pickle.', 'Author - Robert Z');
   
@@ -134,7 +134,7 @@ RecipeCard.prototype.renderRecipeCard = function(namePosition, descriptionPositi
   bartenderPosition.textContent = this.bartender;
 }
 function renderCard() {
-  const recipeCardArticle = document.createElement("id to bartender div?");
+  const recipeCardArticle = document.createElement("recipe_card",);
   articleElem.appendChild(recipeCardArticle);
   const recipeTitle = document.createElement("h2 title", this.name);
   articleElem.appendChild(recipeTitle);
