@@ -92,13 +92,10 @@ function createDrinks() {
   new Drink('Fall in Love', 'This sweet champagne fulfills the feeling of meeting the one of your autumn dreams.', ["Apple Cider", "Ginger Beer", "Honey"], 'Non-Alcoholic Mixer', 'Autumn', 'Wedding', 'Image', "With the love in the air and leaves everywhere, meet the one to become a pair!", "Author - Anvay B");
   new Drink('Poison Appletini', "You won't know how this tastes until you take a sip, but by then it's already too late...", ["Apple Juice", "Lime Drops", "Cayenne Cinnamon"], 'Non-Alcoholic Mixer', 'Autumn', 'Holiday', 'Image', "Pick your poison and pound that potion! Add green color for the aesthetic.", "Author - Anvay B");
   new Drink("Smoking Sea SS", "Get spooky with this deep-sea inspired Halloween mocktail.", "Non-Alcoholic Mixer", ["Cranberry Juice", "Apple Cider", "Dry Ice"], "Autumn", "Night Out", "../images/smoking.png", "Shake, stir, and dive in!", "Author - Jessica P.");
-
   new Drink('Name', 'Description', 'Recipe', 'Non-Alcoholic Mixer', 'Winter', 'Wedding', 'Image', 'Bartender');
   new Drink('Mistletoe Mimosa', 'Make this holiday all holly-jolly with this Christmas cocktail!', ["Barley Tea", "Maple Syrup", "Mistletoe Magic"], 'Non-Alcoholic Mixer', 'Winter', 'Holiday', 'Image', "Mix the strong tea with syrup and find someone for that final ingredient ;) ", "Author, - Anvay B");
-
   new Drink('Git Pulled Wine', 'A warm drink for a happy occasion.', 'Non-Alcoholic Mixer', ['Grape Juice', 'Orange', 'Star Anise', 'Cinnamon Sticks'], 'Winter', 'Wedding', 'In a large oven, warm a bottle of grape juice with sliced oranges, star anise, and cinnamon sticks.', 'Author - Matt C.')
   new Drink('Name', 'Description', 'Recipe', 'Non-Alcoholic Mixer', 'Winter', 'Holiday', 'Image', 'Bartender');
-
   new Drink('Name', 'Description', 'Recipe', 'Non-Alcoholic Mixer', 'Winter', 'Night-Out', 'Image', 'Bartender');
 }
 
