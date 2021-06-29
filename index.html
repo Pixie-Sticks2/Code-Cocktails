@@ -24,6 +24,35 @@
   </header>
   <main>
     <div>
+      <form id="liquorForm">
+        <fieldset>
+          <legend>Create your Cocktail</legend>
+          <label> Liquor Type
+            <select id="liquor" name="liquorChoice">
+              <option>Vodka</option>
+              <option>Tequila</option>
+              <option>Whiskey</option>
+              <option>Non-Alcoholic Mixer</option>
+            </select>
+          <label> Season
+            <select id="season" name="seasonChoice">
+              <option>Summer</option>
+              <option>Autumn</option>
+              <option>Winter</option>
+            </select>
+          </label>
+          <label> Occasion
+            <select id="occasion" name="occasionChoice">
+              <option>Wedding</option>
+              <option>Night-out</option>
+              <option>Holiday</option>
+            </select>
+          </label>
+          <button type="submit" style="margin-top: 7px;">Submit Drink</button>
+        </fieldset>
+      </form>
+    </div>
+    <div>
       <img src="./images/Bartender.png" alt="" id="bartender">
     </div>
   </main>
