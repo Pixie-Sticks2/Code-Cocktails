@@ -27,6 +27,99 @@ body {
   left: 25%;
 }
 
+/* Recipe Card CSS */
+.container {
+  display: flex;
+  z-index: -1;
+  align-items:center;
+  justify-items: center;
+}
+
+.recipe_card {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  z-index: 1;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.recipe_card * {
+  margin: 10px;
+}
+.recipe_card div:nth-child(1) {
+  width: 35%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  text-justify: center;
+}
+
+.recipe_card div:nth-child(2) {
+  width: 35%;
+}
+
+#image {
+  max-width: 50%;
+  max-height: 50%;
+  display: block;
+}
+
+#author {
+  display: block;
+}
+
+#name {
+  font-size: 1.5em;
+  padding: 10px;
+  font-family: "Overpass", sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+#description {
+  font-family: Garamond;
+  font-size: 1.25em;
+}
+
+#ul_ingredients {
+  font-family: Garamond;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.recipe_card div:nth-child(2) ul {
+  list-style-type: square;
+  margin-left: 15px;
+  font-style: italic;
+  list-style-position: inside;
+}
+
+#ul_ingredients li {
+  margin-left: 10px;
+  font-family: Garamond;
+  font-size: 1.25em;
+  letter-spacing: 2px;
+}
+
+#liquorRecipe {
+  font-family: Garamond;
+  font-size: 1.25em;
+}
+
+#directions {
+  font-family: Garamond;
+  font-size: 1.25em;
+}
+/* End of Recipe Card CSS */
+
 nav {
   display: flex;
   align-content: center;
