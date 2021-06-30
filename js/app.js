@@ -41,19 +41,46 @@ function handleSubmit(event) {
 }
 
 Drink.prototype.renderCard = function() {
-
-  let nameElem = document.getElementById("name");
-  let imageElem = document.getElementById("image");
-  let descriptionElem = document.getElementById("description");
-  let liquorTypeElem = document.getElementById("liquorRecipe");
-  let directionsElem = document.getElementById("directions");
-  let authorElem = document.getElementById("author");
+  let containerElem = document.getElementById("container")
+  let cardElem = document.createElement("div");
+  cardElem.setAttribute("class", "recipe_card");
+  containerElem.appendChild(cardElem);
+  let column1 = document.createElement("div");
+  cardElem.appendChild(column1);
+  let imageElem = document.createElement("img");
+  imageElem.setAttribute("id", "image");
+  column1.appendChild(imageElem);
+  let authorElem = document.createElement("p");
+  authorElem.setAttribute("id", "author");
+  column1.appendChild(authorElem);
+  let column2 = document.createElement("div");
+  cardElem.appendChild(column2);
+  let nameElem = document.createElement("h2");
+  nameElem.setAttribute("id", "name");
+  column2.appendChild(nameElem);
+  let descriptionElem = document.createElement("h3");
+  descriptionElem.setAttribute("id", "description");
+  column2.appendChild(descriptionElem);
+  let ulTitleElem = document.createElement("h3");
+  ulTitleElem.textContent = "Ingredients:";
+  ulTitleElem.setAttribute("id", "ul_ingredients");
+  column2.appendChild(ulTitleElem);
+  let liquorTypeElem = document.createElement("ul");
+  liquorTypeElem.setAttribute("id", "liquorRecipe");
+  column2.appendChild(liquorTypeElem);
+  let directionsElem = document.createElement("h3");
+  directionsElem.setAttribute("id", "directions");
+  column2.appendChild(directionsElem);
+  let column3 = document.createElement("div");
+  cardElem.appendChild(column3);
+  // let fav button
+  // let reset button
 
   nameElem.textContent = this.name;
   console.log(this.name);
   imageElem.src = this.image;
   descriptionElem.textContent = this.description;
-  liquorTypeElem.textContent = this.liquorRecipe;
+  // liquorTypeElem.textContent = this.recipe;
   directionsElem.textContent = this.directions;
   authorElem.textContent = this.bartender;
 
@@ -78,12 +105,12 @@ liquorFormElem.addEventListener('submit', handleSubmit);
 //Robert
 
 function createDrinks() {
-  new Drink("Alabama Booty Shaker", "This delicious concoction is guaranteed to get the wedding on the dance floor!", "Tequila", ["Tequila", "Lowered Expectations", "Lively music"], "Summer", "Wedding", "../images/Tiki Drink.png", "Shake it, stir it, and pour it down your gullet!", "Author - Jesse D");
+  new Drink("Alabama Booty Shaker", "This delicious concoction is guaranteed to get the wedding on the dance floor!", "Tequila", ["Tequila", "Lowered Expectations", "Lively music"], "Summer", "Wedding", "../images/jesse-Tiki Drink.png", "Shake it, stir it, and pour it down your gullet!", "Author - Jesse D");
   
   new Drink('Huckleberry Sin', 'Enjoy the sunset with this excoriating critique of slavery - but make sure to stay alert for riverbank beverage bandits!', 'Vodka', ['5 Fresh Blueberries', '2 oz Huckleberry Flavored Vodka', '12 oz Club Soda'], 'Summer', 'Wedding', 'Image', 'Muddle the blueberries in the bottom of a mason jar. Add ice and pour in the vodka, filling to the top with club soda.', 'Author - Robert Z');
   
 
-  new Drink("Backcountry Sour Smash", "This potent drink is a not-so-subtle blend of pine, body odor, and granola", "Vodka", ["Vodka", "Exhaustion", "Unfiltered Water"], "Summer", "Holiday", "../images/Lime Drink.png", "Shrug it off, dust it off, and serve it in your hiking boot!", "Author - Jesse D");
+  new Drink("Backcountry Sour Smash", "This potent drink is a not-so-subtle blend of pine, body odor, and granola", "Vodka", ["Vodka", "Exhaustion", "Unfiltered Water"], "Summer", "Holiday", "../images/jesse-citrus.png", "Shrug it off, dust it off, and serve it in your hiking boot!", "Author - Jesse D");
  
   new Drink('Text-Overflow Rule', 'A Moscow Mule', 'Vodka', ['Vodka', 'Ginger Beer', 'Lime Juice'], 'Summer', 'Night-out', './images/Layered Color Drink.png', 'Pour vodka and ginger beer into a copper mug and a splash of lime juice.', 'Author - Matt C.')
   
@@ -103,7 +130,7 @@ function createDrinks() {
   
   new Drink('GuavaScript', 'If (let feeling === good) {getThisDrink();}', 'Tequila', ['Guava Nectar', 'Tequila', 'Lime', 'Mint'], 'Summer', "Night-out", './images/Lime Drink.png', 'Mix Lime Juice, Tequila, and Guava Nectar in 1:2:6 ratio. Garnish with mint and lime slice.', 'Author - Matt C.');
   
-  new Drink("Aretha Franklin", "Nothing like a big woman to keep you warm at a winter wonderland wedding!", "Tequila", ["Tequila", "Can-do Attitude", "A Whole Lot Of Love"], "Autumnn", "Wedding", "../images/Layered Color Drink.png", "Squeeze it, strain it, and hold on for dear life!", "Author - Jesse D");
+  new Drink("Aretha Franklin", "Nothing like a big woman to keep you warm at a winter wonderland wedding!", "Tequila", ["Tequila", "Can-do Attitude", "A Whole Lot Of Love"], "Autumnn", "Wedding", "../images/jesse-tropicalrazz.png", "Squeeze it, strain it, and hold on for dear life!", "Author - Jesse D");
 
   new Drink('Drankenstein', 'Heads Up: More than a few couples have played their own version of doctor after downing two or three of these monsters.', 'Tequila', ['1 oz Melon Liqueur', '1 oz Tequila', '12 oz Club Soda'], 'Autumn', 'Holiday', 'Image', 'Pour the liqueur and tequila over ice in a highball glass, then fill to the top with club soda.', 'Author - Robert Z');
   
