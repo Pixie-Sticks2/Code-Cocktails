@@ -5,6 +5,7 @@ const liquorFormElem = document.getElementById('liquorForm');
 Drink.prototype.allDrinksArray = [];
 let currentDrink = '';
 let drink;
+let favoriteDrinks = [];
 
 // Constructor Functions
 
@@ -53,6 +54,7 @@ Drink.prototype.renderCard = function() {
   let authorElem = document.createElement("p");
   authorElem.setAttribute("id", "author");
   column1.appendChild(authorElem);
+  
   let column2 = document.createElement("div");
   cardElem.appendChild(column2);
   let nameElem = document.createElement("h2");
@@ -71,9 +73,25 @@ Drink.prototype.renderCard = function() {
   let directionsElem = document.createElement("h3");
   directionsElem.setAttribute("id", "directions");
   column2.appendChild(directionsElem);
+  
   let column3 = document.createElement("div");
   cardElem.appendChild(column3);
+  let heartButton = document.createElement("button");
+  heartButton.setAttribute("class", "heart");
+  heartButton.setAttribute("onclick", "storeFavoriteDrinks()");
+  column3.appendChild(heartButton);
+  let crossedButton = document.createElement("button");
+  crossedButton.setAttribute("class", "crossed-out");
+  crossedButton.setAttribute("onclick", "removeFavoriteDrinks()");
+  column3.appendChild(crossedButton);
+  let crossedImg = document.createElement("img");
+  crossedImg.setAttribute("src", "./images/red-crossed.png");
+  crossedButton.appendChild(crossedImg);
   // let fav button
+  
+  
+  
+  
   // let reset button
 
   nameElem.textContent = this.name;
@@ -88,6 +106,33 @@ Drink.prototype.renderCard = function() {
     let recipeElem = document.createElement("li");
     recipeElem.textContent = this.recipe[i];
     liquorTypeElem.appendChild(recipeElem);
+  }
+}
+
+function storeFavoriteDrinks() {
+  favoriteDrinks.push(currentDrink);
+  let stringDrinks = JSON.stringify(favoriteDrinks);
+  localStorage.setItem('storedDrinks', stringDrinks);
+}
+
+function removeFavoriteDrinks() {
+  for (let i = 0; i < favoriteDrinks.length; i++) {
+    if (currentDrink == favoriteDrinks[i]) {
+      favoriteDrinks.splice(i, 1);
+    }
+  }
+  let stringDrinks = JSON.stringify(favoriteDrinks);
+  localStorage.setItem('storedDrinks', stringDrinks);
+}
+
+function getFavoriteDrinks() {
+  let retrievedDrinks = localStorage.getItem('storedDrinks');
+  if (retrievedProducts) {
+    let parsedDrinks = JSON.parse(retrievedDrinks);
+    console.log(parsedDrinks);
+    for (let i = 0; i < parsedDrinks.length; i++) {
+      // Render recipe card for favorite drink at the current index
+    }
   }
 }
 

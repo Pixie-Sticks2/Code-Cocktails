@@ -206,3 +206,39 @@ nav a:hover {
 #aboutus h3:hover {
   transform: scale(1.2);
 }
+
+/* buttons */
+.heart {
+  width: 100px;
+  height: 100px;
+  /* position: absolute;
+  padding: 0%;
+  left: 50%;
+  top: 50%; */
+  transform: translate(-50%, -50%);
+  background: url(http://imagizer.imageshack.com/img923/4545/XdJDuY.png) no-repeat;  
+  cursor: pointer;
+  border: none;
+  
+}
+.crossed-out {
+  background-color: white;
+  border: none;
+}
+.crossed-out img {
+  width: 40px;
+  background-color: white;
+  /* position: absolute;
+  padding: 0%;
+  left: 55%;
+  top: 50%; */
+  transform: translate(-50%, -50%);
+  border: none;
+  cursor: pointer;
+}
+
+
+.heart-blast {
+  background-position: -2800px 0;
+  transition: background .0057s steps(28);
+}
