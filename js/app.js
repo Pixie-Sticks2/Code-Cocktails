@@ -85,7 +85,7 @@ Drink.prototype.renderCard = function() {
   crossedButton.setAttribute("onclick", "removeFavoriteDrinks()");
   column3.appendChild(crossedButton);
   let crossedImg = document.createElement("img");
-  crossedImg.setAttribute("src", "./images/red-crossed.png");
+  crossedImg.setAttribute("src", "./images/crossed.png");
   crossedButton.appendChild(crossedImg);
   // let fav button
   
@@ -141,6 +141,7 @@ function randomDrink () {
   let randomNum = Math.floor(Math.random() * Drink.prototype.allDrinksArray.length) + 1;
   console.log(randomNum);
   drink = Drink.prototype.allDrinksArray[randomNum];
+  renderCard(drink);
 }
 
 
