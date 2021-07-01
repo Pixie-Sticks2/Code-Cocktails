@@ -7,13 +7,14 @@ p {
 }
 
 header {
-  padding-left: 3%;
-  padding-top: 2%;
-  height: 130px;
+  height: 160px;
 }
 
 header img {
   width: 500px;
+  margin-left: 3%;
+  margin-top: 1.25%;
+  margin-bottom: .75%;
 }
 
 
@@ -21,10 +22,78 @@ body {
   background-color: #eae1df;
 }
 
+#homeMain {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-left: 2%;
+}
+
+#homeContent, #container {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding-top: 2%;
+}
+
 #bartender {
+  width: 85%;
   position: relative;
-  top: 50%;
-  left: 25%;
+  left: 9%;
+  top: 2%;
+}
+/*  Form */
+
+#liquorForm {
+  color: white;
+  background-image: url('../images/chalkboard.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Overpass', sans-serif;
+  margin-top: 40px;
+  text-justify: center;
+  text-align: center;
+  width: fit-content;
+  justify-content: flex-start;
+  align-content: center;
+  position: relative;
+  left: 13px;
+  width: 40%;
+  padding: 6% 0%;
+}
+
+#liquorForm fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  right: 20px;
+}
+
+legend {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+
+#liquorForm button {
+  display: block;
+  color: white;
+  background-color: #d37322;
+  border: none;
+  font-size: 1em;
+  letter-spacing: 1px;
+  padding: 20px 30px;
+  margin-bottom: 10px;;
+}
+
+#liquorForm button:hover {
+  transform: scale(1.1);
 }
 
 /* Recipe Card CSS */
@@ -35,24 +104,55 @@ body {
   justify-items: center;
 }
 
-
-.recipe_card {
+#recipe_card {
   display: flex;
-  width: fit-content;
-  height: fit-content;
   z-index: 1;
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 20%;
   background-color: white;
   padding-top: 20px;
   padding-bottom: 20px;
+  border-radius: 15px;
+  width: 60%;
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+  -moz-animation: fadeIn linear 1s;
+  -o-animation: fadeIn linear 1s;
+  -ms-animation: fadeIn linear 1s;
 }
 
-.recipe_card * {
-  margin: 10px;
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
-.recipe_card div:nth-child(1) {
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+#recipe_card * {
+  margin: 5px;
+}
+
+
+#recipe_card div:nth-child(1) {
   width: 35%;
   height: fit-content;
   display: flex;
@@ -63,31 +163,68 @@ body {
   text-justify: center;
 }
 
-.recipe_card div:nth-child(2) {
+#recipe_card div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
   width: 35%;
+  align-content: center;
+  justify-content: center;
+  padding: 0px 40px 0px 0px;
 }
 
-#image {
-  max-width: 50%;
-  max-height: 50%;
+#recipe_card div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+
+#recipe_card button:nth-child(1) {
   display: block;
+  margin-bottom: 10px;
+}
+
+#recipe_card button:nth-child(2) {
+  display: block;
+  color: white;
+  background-color: #d37322;
+  border: none;
+  font-size: 1em;
+  letter-spacing: 1px;
+  padding: 20px 30px;
+  margin-bottom: 10px;;
+}
+
+#recipe_card button:nth-child(2):hover {
+  transform: scale(1.1);
+}
+
+#drinkImage {
+  display: block;
+  width: 70%;
 }
 
 #author {
   display: block;
+  font-size: 1.4em;
+  font-family: "Overpass", sans-serif;
 }
 
 #name {
-  font-size: 1.5em;
-  padding: 10px;
+  font-size: 1.9em;
   font-family: "Overpass", sans-serif;
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
+  margin-bottom: 10px;
 }
 
 #description {
   font-family: Garamond;
   font-size: 1.25em;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 #ul_ingredients {
@@ -96,11 +233,12 @@ body {
   font-size: 1.25em;
 }
 
-.recipe_card div:nth-child(2) ul {
+#recipe_card div:nth-child(2) ul {
   list-style-type: square;
   margin-left: 15px;
-  font-style: italic;
+  font-style: oblique;
   list-style-position: inside;
+  margin-bottom: 30px;
 }
 
 #ul_ingredients li {
@@ -118,7 +256,42 @@ body {
 #directions {
   font-family: Garamond;
   font-size: 1.25em;
+  text-align: center;
 }
+.greyHeart {
+  width: 80px;
+  height: 80px;
+  background-image: url('../images/Heart-Grey.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+
+.greyHeart:hover {
+  transform: scale(1.1);
+  transition: ease-in;
+  transition: ease-out;
+}
+
+.redHeart:hover {
+  transform: scale(1.1);
+  transition: ease-in;
+  transition: ease-out;
+}
+
+.redHeart {
+  width: 80px;
+  height: 80px;
+  background-image: url('../images/Red-Heart.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+
 /* End of Recipe Card CSS */
 
 #overlay {
@@ -221,38 +394,170 @@ nav a:hover {
   transform: scale(1.2);
 }
 
-/* buttons */
-.heart {
-  width: 100px;
-  height: 100px;
-  /* position: absolute;
-  padding: 0%;
-  left: 50%;
-  top: 50%; */
-  transform: translate(-50%, -50%);
-  background: url(http://imagizer.imageshack.com/img923/4545/XdJDuY.png) no-repeat;  
-  cursor: pointer;
-  border: none;
-  
+
+/*  */
+
+.choice-label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  text-overflow: none;
+  margin: 10px 50px 25px 60px;
 }
-.crossed-out {
-  background-color: white;
-  border: none;
-}
-.crossed-out img {
-  width: 40px;
-  background-color: white;
-  /* position: absolute;
-  padding: 0%;
-  left: 55%;
-  top: 50%; */
-  transform: translate(-50%, -50%);
-  border: none;
+
+.choice-label-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  font-size: 20px;
+  font-weight: 300;
+  color: black;
+  height: 60px;
+  line-height: 60px;
+  background: white;
   cursor: pointer;
+}
+.user-options {
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.choice-label.open .user-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.user-option {
+  position: relative;
+  display: block;
+  padding: 0 22px 0 22px;
+  font-size: 22px;
+  font-weight: 300;
+  color: black;
+  line-height: 60px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.user-option:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #30ad1c;
+}
+
+.user-option.selected {
+  color: #ffffff;
+  background-color: #d37322;
 }
 
 
-.heart-blast {
-  background-position: -2800px 0;
-  transition: background .0057s steps(28);
+.arrow {
+  position: relative;
+  height: 15px;
+  width: 15px;
 }
+.arrow::before, .arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 0.15rem;
+  height: 100%;
+  transition: all 0.5s;
+}
+.arrow::before {
+  left: -5px;
+  transform: rotate(45deg);
+  background-color: #d37322;
+}
+.arrow::after {
+  left: 5px;
+  transform: rotate(-45deg);
+  background-color: #d37322;
+}
+.open .arrow::before {
+  left: -5px;
+  transform: rotate(-45deg);
+}
+.open .arrow::after {
+  left: 5px;
+  transform: rotate(45deg);
+}
+
+/* Favorite Card */
+
+#favoriteGrid {
+  display: grid;
+  padding: 50px 5%;
+  grid-template-columns: 25%;
+}
+
+.favoriteCard {
+  background-color: white;
+  margin: 0px 15px;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 1.1em;
+}
+
+.faveBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0px;
+}
+
+.faveBox button {
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  margin-bottom: 0px;
+}
+
+.contentDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  text-justify: center;
+  margin-top: 0px;
+  z-index: -1;
+}
+
+.favoriteCard img {
+  display: block;
+  width: 60%;
+  margin: 0px;
+  position: relative;
+  bottom: 10px;
+}
+
+.favoriteCard * {
+  margin: 10px;
+}
+
+.favoriteCard h2, h3 {
+  font-size: 1.3em;
+  font-weight: bolder;
+  font-family: 'Overpass', sans-serif;
+}
+
+.favoriteCard ul {
+  list-style-type: square;
+  text-align: left;
+}
+
+
+

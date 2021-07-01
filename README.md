@@ -35,3 +35,11 @@
 - HTML
 - CSS
 - Photoshop
+
+
+
+https://blog.hubspot.com/website/css-fade-in
+
+https://www.w3schools.com/howto/howto_js_toggle_class.asp
+
+
