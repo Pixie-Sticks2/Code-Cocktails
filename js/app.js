@@ -110,7 +110,11 @@ Drink.prototype.renderCard = function() {
 }
 
 function storeFavoriteDrinks() {
+  if (favoriteDrinks.includes(currentDrink)) {
+  return;
+  }
   favoriteDrinks.push(currentDrink);
+  console.log("favorite drinks", favoriteDrinks);
   let stringDrinks = JSON.stringify(favoriteDrinks);
   localStorage.setItem('storedDrinks', stringDrinks);
 }
@@ -127,11 +131,57 @@ function removeFavoriteDrinks() {
 
 function getFavoriteDrinks() {
   let retrievedDrinks = localStorage.getItem('storedDrinks');
-  if (retrievedProducts) {
+  if (retrievedDrinks) {
     let parsedDrinks = JSON.parse(retrievedDrinks);
     console.log(parsedDrinks);
-    for (let i = 0; i < parsedDrinks.length; i++) {
-      // Render recipe card for favorite drink at the current index
+    for (let drink of parsedDrinks) {
+      let name = drink.name;
+      let description = drink.description;
+      let recipe = drink.recipe;
+      let liquorType = drink.liquorType;
+      let season = drink.season;
+      let occasion = drink.occasion;
+      let image = drink.image;
+      let directions = drink.directions;
+      let bartender = drink.bartender;
+      let arrayPush = new Drink(name, description, liquorType, recipe, season, occasion, image, directions, bartender);
+      favoriteDrinks.push(arrayPush);
+    }
+    renderFavoriteDrinks();
+  }
+}
+
+function renderFavoriteDrinks() {
+  console.log("I am here", favoriteDrinks);
+  let gridElem = document.getElementById("favoriteGrid");
+  for (let i = 0; i < favoriteDrinks.length; i++) {
+    let faveDrink = favoriteDrinks[i]
+    let cardElem = document.createElement("div");
+    cardElem.setAttribute("class", "favoriteCard");
+    gridElem.appendChild(cardElem);
+    let imgElem = document.createElement("img");
+    imgElem.src = faveDrink.image;
+    cardElem.appendChild(imgElem);
+    let nameElem = document.createElement("h2");
+    nameElem.textContent = faveDrink.name;
+    cardElem.appendChild(nameElem);
+    let descriptionElem = document.createElement("p");
+    descriptionElem.textContent = faveDrink.description;
+    cardElem.appendChild(descriptionElem);
+    let listElem = document.createElement("ul");
+    cardElem.appendChild(listElem);
+    let directionsElem = document.createElement("p");
+    directionsElem.textContent = faveDrink.directions;
+    cardElem.appendChild(directionsElem);
+    let bartenderElem = document.createElement("p");
+    bartenderElem.textContent = faveDrink.bartender;
+    cardElem.appendChild(bartenderElem);
+    // reset or clear button
+
+    for (let j = 0; j < faveDrink.recipe.length; j++) {
+      let recipeItem = document.createElement("li");
+      recipeItem.textContent = faveDrink.recipe[j];
+      listElem.appendChild(recipeItem);
     }
   }
 }
@@ -146,7 +196,9 @@ function randomDrink () {
 
 
 // Event Listener
-liquorFormElem.addEventListener('submit', handleSubmit);
+if (liquorFormElem) { 
+liquorFormElem.addEventListener('submit', handleSubmit)
+}
 
 //Robert
 
@@ -164,7 +216,7 @@ function createDrinks() {
 
   new Drink("Drunken Spice Latte", "This Russian liquor takes an adult twist on every basic white girl's coffee of choice!", "Vodka", ["Tiny Pumpkins","Instagram Captions","Latte Foam Art"], "Autumn", "Holiday", "Image", "Listen to Bo Burnam's 'White Woman's Instagram' song and add whatever you want from that. Top it all off with vodka.", "Author - Anvay B");
    
-  new Drink("No 'Regerts'", "This sneaky little cocktail might force you to delete your social media accounts!", "Vodka", ["Vodka", "Poor Life Choices", "Peer Pressure"], "Autumn", "Night-Out", "../images/examplePic.png", "Carry on with reckless abandon, throw in a misspelled tattoo, and serve it on a stranger's bellybutton.", "Author - Jesse D");
+  new Drink("No 'Regerts'", "This sneaky little cocktail might force you to delete your social media accounts!", "Vodka", ["Vodka", "Poor Life Choices", "Peer Pressure"], "Autumn", "Night-out", "../images/examplePic.png", "Carry on with reckless abandon, throw in a misspelled tattoo, and serve it on a stranger's bellybutton.", "Author - Jesse D");
   
   new Drink("Reindeer RAM", "Boost memories of your big day with this elegant peppermint martini!", "Vodka", ["Vodka", "Candy Canes", "Marshmallow Creme"], "Winter", "Wedding", "../images/reindeer.png", "Crush peppermint, swirl, and serve.", "Author - Jessica P.");
   
@@ -226,33 +278,7 @@ function createDrinks() {
 }
 
 
-
-
-
-
 createDrinks();
 randomDrink();
-console.log(drink);
+getFavoriteDrinks();
 
-// Jesse
-//----------------Prototype Method---------------------//
-// RecipeCard.prototype.renderRecipeCard = function(namePosition, descriptionPosition, liquorTypePosition, recipePosition, imagePosition, directionsPosition, bartenderPosition) {
-//   namePosition.textContent = this.name;
-//   descriptionPosition.textContent = this.description;
-//   liquorTypePosition.textContent = this.liquorType;
-//   recipePosition.textContent = this.recipe;
-//   imagePosition.src = this.image;
-//   directionsPosition.textContent = this.ingredients;
-//   bartenderPosition.textContent = this.bartender;
-// }
-// function renderCard() {
-//   const recipeCardArticle = document.createElement("recipe_card",);
-//   articleElem.appendChild(recipeCardArticle);
-//   const recipeTitle = document.createElement("h2 title", this.name);
-//   articleElem.appendChild(recipeTitle);
-//   const recipeDescription = document.createElement("h3", this.description);
-//   articleElem.appendChild(recipeDescription);
-//   const recipeLiquor = document.createElement("p", this.liquorType);
-//   articleElem.appendChild(recipeLiquor);
-// }
-//--hello world--//
