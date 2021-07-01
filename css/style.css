@@ -35,6 +35,7 @@ body {
   justify-items: center;
 }
 
+
 .recipe_card {
   display: flex;
   width: fit-content;
@@ -119,6 +120,19 @@ body {
   font-size: 1.25em;
 }
 /* End of Recipe Card CSS */
+
+#overlay {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  z-index: 1;
+  position: absolute;
+  /* top: 50%;
+  left: 81%; */
+  color: black;
+  padding: 10px;
+}
+
 
 nav {
   display: flex;

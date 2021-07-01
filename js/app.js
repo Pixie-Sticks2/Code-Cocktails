@@ -7,6 +7,7 @@ let currentDrink = '';
 let drink;
 let favoriteDrinks = [];
 
+
 // Constructor Functions
 
 function Drink(name, description, liquorType, recipe, season, occasion, image, directions, bartender) {
@@ -187,12 +188,13 @@ function renderFavoriteDrinks() {
 }
 
 //user selects Randomize Drink option
-function randomDrink () {
+function randomDrink() {
   let randomNum = Math.floor(Math.random() * Drink.prototype.allDrinksArray.length) + 1;
   console.log(randomNum);
   drink = Drink.prototype.allDrinksArray[randomNum];
-  renderCard(drink);
+  drink.renderCard();
 }
+
 
 
 // Event Listener
@@ -201,7 +203,6 @@ liquorFormElem.addEventListener('submit', handleSubmit)
 }
 
 //Robert
-
 function createDrinks() {
   new Drink("Alabama Booty Shaker", "This delicious concoction is guaranteed to get the wedding on the dance floor!", "Tequila", ["Tequila", "Lowered Expectations", "Lively music"], "Summer", "Wedding", "../images/jesse-Tiki Drink.png", "Shake it, stir it, and pour it down your gullet!", "Author - Jesse D");
   
@@ -279,6 +280,4 @@ function createDrinks() {
 
 
 createDrinks();
-randomDrink();
 getFavoriteDrinks();
-
