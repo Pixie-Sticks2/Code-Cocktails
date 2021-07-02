@@ -70,7 +70,7 @@ Drink.prototype.renderCard = function() {
   let clearButton = document.createElement("button");
   clearButton.setAttribute("id", "clear");
   clearButton.setAttribute("onclick", "clearCard()");
-  clearButton.textContent = "Try Again";
+  clearButton.textContent = "Make Another Drink";
   column3.appendChild(clearButton);
 
   nameElem.textContent = this.name;
@@ -150,31 +150,36 @@ function getFavoriteDrinks() {
       let bartender = drink.bartender;
       let arrayPush = new Drink(name, description, liquorType, recipe, season, occasion, image, directions, bartender);
       favoriteDrinks.push(arrayPush);
+      Drink.prototype.allDrinksArray = [];
+      createDrinks();
     }
     renderFavoriteDrinks();
   }
 }
 
 function favoriteRemoval(i) {
-  favoriteDrinks.splice(i, 1) 
+  favoriteDrinks.splice(i, 1); 
+  let stringDrinks = JSON.stringify(favoriteDrinks);
+  localStorage.setItem('storedDrinks', stringDrinks);
   clearGrid();
   renderFavoriteDrinks();
+  renderMessage();
+  console.log(favoriteDrinks);
 }
 
 function renderFavoriteDrinks() {
   let gridElem = document.getElementById("favoriteGrid");
-  for (let i = 0; i < favoriteDrinks.length; i++) {
+  for (let i = favoriteDrinks.length - 1; i >= 0; i--) {
     let faveDrink = favoriteDrinks[i]
     let cardElem = document.createElement("div");
-    cardElem.setAttribute("class", "favoriteCard");
-    cardElem.setAttribute("class", "favoriteDrink" + i)
+    cardElem.setAttribute("class", "favoriteDrink favoriteCard");
     gridElem.appendChild(cardElem);
     let faveDiv = document.createElement("div");
     faveDiv.setAttribute("class", "faveBox");
     cardElem.appendChild(faveDiv);
     let heartButton = document.createElement("button");
-    heartButton.setAttribute("id", "heart");
-    heartButton.setAttribute("class", "greyHeart");
+    heartButton.setAttribute("id", "heart2");
+    heartButton.setAttribute("class", "redHeart");
     heartButton.setAttribute("onclick", "favoriteRemoval(" + i + ")");
     faveDiv.appendChild(heartButton);
     let contentDiv = document.createElement("div");
@@ -204,17 +209,38 @@ function renderFavoriteDrinks() {
       listElem.appendChild(recipeItem);
     }
   
-    let heartColor = document.getElementById("heart");
-    heartColor.classList.toggle("redHeart");
-    console.log(heartColor.classList);
+    // let heartColor = document.getElementById("heart");
+    // heartColor.classList.toggle("redHeart");
+    // console.log(heartColor.classList);
   }
 }
 
 //user selects Randomize Drink option
 function randomDrink() {
+  clearCard();
   let randomNum = Math.floor(Math.random() * Drink.prototype.allDrinksArray.length) + 1;
-  drink = Drink.prototype.allDrinksArray[randomNum];
-  drink.renderCard();
+  currentDrink = Drink.prototype.allDrinksArray[randomNum];
+  currentDrink.renderCard();
+  storeFavoriteDrinks();
+}
+
+function errorPop() {
+  let containerElem = document.getElementById("container");
+  let cardElem = document.createElement("div");
+  cardElem.setAttribute("id", "error_card");
+  containerElem.appendChild(cardElem);
+  let errorMessage = document.createElement("h2");
+  errorMessage.textContent = "Looks like our bartenders need a little more information. Please check your choices and try again."
+  cardElem.appendChild(errorMessage);
+  let clearButton = document.createElement("button");
+  clearButton.setAttribute("id", "clear");
+  clearButton.setAttribute("class", "orangeButton");
+  clearButton.setAttribute("onclick", "clearCard()");
+  clearButton.textContent = "Go Back and Try Again";
+  cardElem.appendChild(clearButton);
+  let rowImage = document.createElement("img");
+  rowImage.src = "./images/Drink Row.png";
+  cardElem.appendChild(rowImage);
 }
 
 
@@ -224,16 +250,23 @@ if (liquorFormElem) {
 liquorFormElem.addEventListener('submit', handleSubmit)
 }
 
-// 
+let randomSelectorElem = document.getElementById('chalkboard');
+
+if (randomSelectorElem) {
+randomSelectorElem.addEventListener('click', randomDrink);
+}
 
 for (const option of document.querySelectorAll(".user-option")) {
   option.addEventListener('click', function() {
-      if (!this.classList.contains('selected')) {
-          this.parentNode.querySelector('.user-option.selected').classList.remove('selected');
-          this.classList.add('selected');
-          this.closest('.choice-label').querySelector('.choice-label-box').textContent = this.textContent;
-      }
+    if (!this.classList.contains('selected')) {
+      this.parentNode.querySelector('.user-option.selected').classList.remove('selected');
+      this.classList.add('selected');
+      this.closest('.choice-label').querySelector('.choice-label-box span').textContent = this.textContent;
+    } else if (this.classList.contains('selected')) {
+      this.closest('.choice-label').querySelector('.choice-label-box span').textContent = this.textContent;
+    }
   })
+  console.log(optionArray);
 }
 
 for (const innerDiv of document.querySelectorAll(".user-choice-parent")) {
@@ -272,6 +305,10 @@ function handleSubmit(event) {
   console.log(liquorOption);
   console.log(seasonOption);
   console.log(occasionOption);
+  if (liquorOption === "liquor" || seasonOption === "season" || occasionOption === "event") {
+    errorPop();
+    return;
+  }
   for (let i = 0; i < Drink.prototype.allDrinksArray.length; i++) {
     if (liquorOption == Drink.prototype.allDrinksArray[i].liquorType && seasonOption == Drink.prototype.allDrinksArray[i].season && occasionOption == Drink.prototype.allDrinksArray[i].occasion) {
       currentDrink = Drink.prototype.allDrinksArray[i];
@@ -279,7 +316,6 @@ function handleSubmit(event) {
   }
   // render recipe card
   currentDrink.renderCard();
-  optionArray = [];
 }
 
 window.addEventListener('click', function(option) {
@@ -289,6 +325,20 @@ window.addEventListener('click', function(option) {
       }
   }
 });
+
+function renderMessage() {
+  let faveMainElem = document.getElementById("faveMain");
+  if (favoriteDrinks.length === 0) {
+  let faveMessage1 = document.createElement("p");
+  faveMessage1.setAttribute("class", "noFave");
+  faveMessage1.textContent = "Hmmm... Your favorite shelf is empty.";
+  faveMainElem.appendChild(faveMessage1);
+  let faveMessage2 = document.createElement("p");
+  faveMessage2.setAttribute("class", "noFave");
+  faveMessage2.textContent = "Why don't we visit the bar and make a drink?";
+  faveMainElem.appendChild(faveMessage2);
+  }
+}
 
 //Robert
 function createDrinks() {
@@ -368,6 +418,9 @@ function createDrinks() {
 
 
 createDrinks();
-// randomDrink();
 getFavoriteDrinks();
+renderMessage();
+storeAllDrinks();
+getAllDrinks();
+
 
