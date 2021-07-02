@@ -3,7 +3,7 @@ h1 {
 }
 
 p {
-  font-family: Georgia, 'Times New Roman', Times, serif
+  font-family: 'Noto Serif TC', serif;
 }
 
 header {
@@ -28,6 +28,7 @@ body {
   align-content: center;
   padding-left: 2%;
 }
+
 
 #homeContent, #container {
   display: flex;
@@ -81,7 +82,7 @@ legend {
 }
 
 
-#liquorForm button {
+.orangeButton {
   display: block;
   color: white;
   background-color: #d37322;
@@ -92,7 +93,7 @@ legend {
   margin-bottom: 10px;;
 }
 
-#liquorForm button:hover {
+.orangeButton:hover {
   transform: scale(1.1);
 }
 
@@ -106,13 +107,15 @@ legend {
 
 #recipe_card {
   display: flex;
-  z-index: 1;
+  flex-direction: row;
+  z-index: 2;
   position: absolute;
   top: 30%;
   left: 20%;
   background-color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  padding-right: 40px;
   border-radius: 15px;
   width: 60%;
   animation: fadeIn linear 1s;
@@ -158,7 +161,7 @@ legend {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-items: center;
+  justify-items: flex-end;
   text-align: center;
   text-justify: center;
 }
@@ -166,10 +169,10 @@ legend {
 #recipe_card div:nth-child(2) {
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 40%;
   align-content: center;
-  justify-content: center;
-  padding: 0px 40px 0px 0px;
+  justify-items: flex-end;
+  padding: 20px 40px 0px 0px;
 }
 
 #recipe_card div:nth-child(3) {
@@ -221,14 +224,17 @@ legend {
 }
 
 #description {
-  font-family: Garamond;
-  font-size: 1.25em;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  line-height: 1.2em;
   margin-bottom: 20px;
   text-align: center;
+  /* font-stretch: wider; */
 }
 
 #ul_ingredients {
-  font-family: Garamond;
+  font-family: "Overpass", sans-serif;
   font-weight: bold;
   font-size: 1.25em;
 }
@@ -243,20 +249,24 @@ legend {
 
 #ul_ingredients li {
   margin-left: 10px;
-  font-family: Garamond;
+  font-family: 'Noto Serif TC', serif;
   font-size: 1.25em;
   letter-spacing: 2px;
+  margin-top: 6px;
 }
 
 #liquorRecipe {
-  font-family: Garamond;
-  font-size: 1.25em;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.1em;
+  line-height: 1.2em;
 }
 
 #directions {
-  font-family: Garamond;
-  font-size: 1.25em;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.1em;
   text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 1.2em;
 }
 .greyHeart {
   width: 80px;
@@ -340,7 +350,7 @@ nav a:hover {
   background-color: white;
   width: 300px;
   font-weight: 550;
-  transform: scale(1.25);
+  transform: scale(1.15);
   border-radius: 15px;;
 }
 
@@ -495,20 +505,104 @@ nav a:hover {
   transform: rotate(45deg);
 }
 
-/* Favorite Card */
+#chalkboard {
+  position: absolute;
+  z-index: 1;
+  width: 240px;
+  margin-left: 520px;
+  margin-top: 69px;
+}
+  
+  #chalkboard:hover {
+    animation: shake 3s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+    }
+    
+    @keyframes shake {
+      0% { transform: translate(1px, -1px) rotate(0deg); }
+      10% { transform: translate(0px, 0px) rotate(-1deg); }
+      20% { transform: translate(-1px, 1px) rotate(1deg); }
+      30% { transform: translate(0px, 0px) rotate(0deg); }
+      40% { transform: translate(1px, -1px) rotate(1deg); }
+      50% { transform: translate(2px, 1px) rotate(-1deg); }
+      60% { transform: translate(1px, -1px) rotate(0deg); }
+      70% { transform: translate(0px, 0px) rotate(-1deg); }
+      80% { transform: translate(-1px, 1px) rotate(1deg); }
+      90% { transform: translate(0px, 0px) rotate(0deg); }
+      100% { transform: translate(2px, 1px) rotate(-1deg); }
+    }
+    
+    /* Favorite Card */
+    
+.noFave {
+  color: black;
+  font-size: 1.7em;
+  margin: 0% 25%;
+  padding-right: 3%;
+  display: block;
+  text-justify: center;
+  font-family: 'Overpass', sans-serif;
+  line-height: 1.5em;
+  font-style: oblique;
+  text-align: center;
+}
+
+#error_card {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  z-index: 2;
+  position: absolute;
+  top: 30%;
+  left: 18.5%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 55px 20px 35px 20px;
+  border-radius: 15px;
+  width: 60%;
+  font-size: 1.3em;
+  font-family: 'Overpass', sans-serif;
+  text-align: center;
+  text-justify: center;
+  align-items: center;
+  justify-items: center;
+}
+
+#error_card * {
+  margin: 20px;
+}
+
+#error_card h2 {
+  width: 70%;
+}
+
+#error_card img {
+  width: 70%;
+}
+
+#error_card button {
+  display: inline-block;
+}
 
 #favoriteGrid {
   display: grid;
   padding: 50px 5%;
-  grid-template-columns: 25%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+  column-gap: 4%;
+  row-gap: 2%;
 }
 
 .favoriteCard {
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  margin: 0px 15px;
   border-radius: 15px;
   padding: 10px;
   font-size: 1.1em;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
 }
 
 .faveBox {
@@ -521,27 +615,25 @@ nav a:hover {
 .faveBox button {
   width: 50px;
   height: 50px;
-  z-index: 1;
   margin-bottom: 0px;
 }
 
 .contentDiv {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-items: center;
+  align-content: center;
   text-align: center;
   text-justify: center;
   margin-top: 0px;
-  z-index: -1;
 }
 
 .favoriteCard img {
   display: block;
-  width: 60%;
+  width: 40%;
   margin: 0px;
   position: relative;
-  bottom: 10px;
+  bottom: 20px;
+  align-self: center;
 }
 
 .favoriteCard * {
@@ -554,9 +646,19 @@ nav a:hover {
   font-family: 'Overpass', sans-serif;
 }
 
+.favoriteCard p {
+  font-family: 'Noto Serif TC', serif;
+  font-size: .9em;
+  letter-spacing: 1px;
+  line-height: 1.2em;
+}
+
 .favoriteCard ul {
+  list-style-position: inside;
   list-style-type: square;
   text-align: left;
+  padding-left: 6%;
+  font-style: italic;
 }
 
 
