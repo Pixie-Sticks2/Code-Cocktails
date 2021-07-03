@@ -353,7 +353,7 @@ function createDrinks() {
   
   new Drink('Gulp-iver\'s Travels', 'A drink worth setting sail for. The Brobdingnagians would agree!', 'Vodka', ['1/2 oz Vodka', '1/2 oz Peach Schnapps', '1/2 oz Grapefruit Juice', '1/2 oz Cranberry Juice'], 'Autumn', 'Wedding', "./images/anvay-fire.png", 'Shake the ingredients with ice and strain into an empty rocks glass. This goes down in a single swig.', 'Author - Robert Z');
 
-  new Drink("Drunken Spice Latte", "This Russian liquor takes an adult twist on every basic white girl's coffee of choice!", "Vodka", ["Vodka", "Tiny Pumpkins","Instagram Captions","Latte Foam Art"], "Autumn", "Holiday", "./images/matt-pumpkin.png", "Listen to Bo Burnam's 'White Woman's Instagram' song and add whatever you want from that. Top it all off with vodka.", "Author - Anvay B");
+  new Drink("Drunken Spice Latte", "This Russian liquor takes an adult twist on every basic white girl's coffee of choice!", "Vodka", ["Vodka", "Tiny Pumpkins","Instagram Captions","Latte Foam Art"], "Autumn", "Holiday", "./images/jess-chocolate.png", "Listen to Bo Burnam's 'White Woman's Instagram' song and add whatever you want from that. Top it all off with vodka.", "Author - Anvay B");
    
   new Drink("No 'Regerts'", "This sneaky little cocktail might force you to delete your social media accounts!", "Vodka", ["Vodka", "Poor Life Choices", "Peer Pressure"], "Autumn", "Night-out", "./images/jess-pineapple.png", "Carry on with reckless abandon, throw in a misspelled tattoo, and serve it on a stranger's bellybutton.", "Author - Jesse D");
   
@@ -381,9 +381,11 @@ function createDrinks() {
 
   new Drink('A Confederacy of Ounces', '"Oh, Fortuna, you capricious sprite!" ~Ignatius J. Reilly', 'Whiskey', ['Whiskey', '1/2 oz Anise Liqueur', '1-1/2 oz Rye Whiskey', '1 tsp Sugar', '3 Dashes Peychaud\'s Bitters', '2 Dashes Angostura Bitters', 'Lemon Twist'], 'Summer', 'Wedding', "./images/matt-whiskey.png", 'Pour the liqueur into a chilled rocks glass, swirl to coat then toss anything that doesn\'t stick. Add the remaining ingredients to a shaker with ice, shake well and strain into a glass.', 'Author - Robert Z');
   
-  new Drink('Rum Filled Revelries', 'Take this packed drink and your party could easily rival that of a Dionysian bacchanal!', 'Whiskey', ["Rum", "Risks", "Regrets"], 'Summer', 'Night-out', "./images/matt-whiskey.png", "Smash it, pass it, and forget everything you do tonight!", "Author – Anvay B");
+
+  new Drink('Rum Filled Revelries', 'Take this packed drink and your party could easily rival that of a Dionysian bacchanal!', 'Whiskey', ["Rum", "Risks", "Regrets"], 'Summer', 'Night-out', "./images/anvay-Champagne.png", "Smash it, pass it, and forget everything you do tonight!", "Author – Anvay B");
+
   
-  new Drink('Moonlight Moonshine', 'A smooth swill will undoubtedly infuse you with giddy warmth on winter nights!', 'Whiskey', ["Moonshine", "Mirth", "maybe Mistakes"], 'Winter', 'Holiday', "./images/matt-mint.png", "Brew it, drink it, and get rid of all the evidence!", "Author – Anvay B");
+  new Drink('Moonlight Moonshine', 'A smooth swill will undoubtedly infuse you with giddy warmth on winter nights!', 'Whiskey', ["Moonshine", "Mirth", "maybe Mistakes"], 'Winter', 'Holiday', "./images/anvay-Champagne.png", "Brew it, drink it, and get rid of all the evidence!", "Author – Anvay B");
 
   new Drink('Whiskey Partner Power Hour', 'Perfect for a nice Friday afternoon listening to cool people talk about their experiences in coding.', 'Whiskey', ['Whiskey', 'Lemon Juice', 'Simple Syrup', 'Maraschino Cherry (Optional)'], 'Summer', 'Holiday', "./images/matt-cherrywhiskey.png", 'Mix, shake, serve.', 'Author - Matt C.');
     
@@ -397,13 +399,17 @@ function createDrinks() {
     
   new Drink("Boolean Buttered Beer", "Cold outside? Warm up with this magical spiced drink.", "Whiskey", ["Whiskey", "Agave Nectar", "Unsalted Butter", "Ground Cloves"], "Winter", "Night-out", "./images/jess-boolean.png", "Swish and flick!", "Author - Jessica P.");
 
-  new Drink('Frosé', 'Make any seaside getaway complete with this classic slushy!', 'Non-Alcoholic Mixer', ['Non-Alcoholic Mixer', "replacement Rosé", "Raspberries", "Rest"], 'Summer', 'Wedding', "./images/jess-Coconut.png", "Just go out and buy some pink lemonade and berries. After all, today is your rest day.", "Author - Anvay B");
+
+  new Drink('Frosé', 'Make any seaside getaway complete with this classic slushy!', 'Non-Alcoholic Mixer', ['Non-Alcoholic Mixer', "replacement Rosé", "Raspberries", "Rest"], 'Summer', 'Wedding', "./images/anvay-pinkfizz.png", "Just go out and buy some pink lemonade and berries. After all, today is your rest day.", "Author - Anvay B");
+
 
   new Drink("Bomb Pop", "A modernized twist on the original red, white, and blue popsicle", "Non-Alcoholic Mixer", ["Non-Alcoholic Mixer", "Fruit Punch", "Artificial Food Coloring"], "Summer", "Holiday", "./images/jesse-america.png", "Blend each colored punch with coloring and ice, then layer each colored slush mix into glass and serve!", "Author - Jesse D");
   
   new Drink("Method Margarita Mocktail", "The fun is built-in to this tart splash of summer!", "Non-Alcoholic Mixer", ['Non-Alcoholic Mixer', "Limeade", "Simple Syrup", "Club Soda", "Coarse Salt"], "Summer", "Night-out", "./images/anvay-greenmargarita.png", "Mix well, sip, and enjoy.", "Author - Jessica P.");
   
-  new Drink('Fall in Love', 'This sweet champagne fulfills the feeling of meeting the one of your autumn dreams.', 'Non-Alcoholic Mixer', ['Non-Alcoholic Mixer', "Apple Cider", "Ginger Beer", "Honey"], 'Autumn', 'Wedding', "./images/matt-tropicalflower.png", "With the love in the air and leaves everywhere, meet the one to become a pair!", "Author - Anvay B");
+
+  new Drink('Fall in Love', 'This sweet champagne fulfills the feeling of meeting the one of your autumn dreams.', 'Non-Alcoholic Mixer', ['Non-Alcoholic Mixer', "Apple Cider", "Ginger Beer", "Honey"], 'Autumn', 'Wedding', "./images/anvay-orangedrink.png", "With the love in the air and leaves everywhere, meet the one to become a pair!", "Author - Anvay B");
+
   
   new Drink('Poison Appletini', "You won't know how this tastes until you take a sip, but by then it's already too late...", 'Non-Alcoholic Mixer', ["Apple Juice", "Lime Drops", "Cayenne Cinnamon"], 'Autumn', 'Holiday', "./images/anvay-greenmargarita.png", "Pick your poison and pound that potion! Add green color for the aesthetic.", "Author - Anvay B");
   
