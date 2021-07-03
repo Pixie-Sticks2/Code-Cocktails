@@ -391,7 +391,7 @@ function createDrinks() {
     
   new Drink("Chocolate Constructor", "Once you've made one, you've made them all!", "Whiskey", ["Whiskey", "Chocolate Bitters", "Orange"], "Autumn", "Wedding", "./images/jess-chocolate.png", "Cozy up, pour up, and bottom's up!", "Author - Jessica P.");
   
-  new Drink("Politically Incorrect", "Show your peers that you're the old white man that nobody wants to listen to anymore", "Whiskey", ["Whiskey", "Intolerance", "Blatant Disregard"], "Autumn", "Holiday", "./images/anvay-moonshine.png", "Stonewall it, pass it in the middle of the night, and take it from a non-profit fund!");
+  new Drink("Politically Incorrect", "Show your peers that you're the old white man that nobody wants to listen to anymore", "Whiskey", ["Whiskey", "Intolerance", "Blatant Disregard"], "Autumn", "Holiday", "./images/anvay-moonshine.png", "Stonewall it, pass it in the middle of the night, and take it from a non-profit fund!", "Author - Jesse D");
   
   new Drink('The S(ide)carlet Letter', 'So tasty you may just end up parading through town afterward. Have no shame: this baby\'s all yours!', 'Whiskey', ['Whiskey', 'Sugared Cocktail Rim', '1 oz Cherry Juice', '1/2 oz Brandy', '1/2 oz Triple Sec'], 'Autumn', 'Night-out', "./images/matt-mint.png", 'Rim a chilled cocktail glass with sugar and place aside. Shake the ingredients with ice and strain into the glass.', 'Author - Robert Z');
   
