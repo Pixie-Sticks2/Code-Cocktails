@@ -221,7 +221,7 @@ function randomDrink() {
   let randomNum = Math.floor(Math.random() * Drink.prototype.allDrinksArray.length) + 1;
   currentDrink = Drink.prototype.allDrinksArray[randomNum];
   currentDrink.renderCard();
-  storeFavoriteDrinks();
+  // storeFavoriteDrinks();
 }
 
 function errorPop() {
